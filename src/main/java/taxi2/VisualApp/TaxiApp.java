@@ -1,5 +1,7 @@
 package taxi2.VisualApp;
 
+import java.awt.Font;
+
 import Drivers.TaxiDriver;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -9,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import taxi2.VisualApp.dbEngine.JPAControl;
 
@@ -27,14 +31,16 @@ public class TaxiApp extends Application{
 		primaryStage.setTitle("Codeme Taxi");
 		GridPane root = new GridPane();
 		Label title = new Label("Available drivers");
+		
 		root.add(title, 0, 0);
 		
 		ListView<TaxiDriver> list = new ListView<>(c.getData());
 		root.add(list, 0, 1);
 		
-		Scene scene = new Scene(root, 600, 600);
+		Scene scene = new Scene(root, 600, 600, Color.BLACK);
+		
 		primaryStage.setScene(scene);
-		scene.getFill();
+		scene.setFill(Color.AZURE);
 		
 		primaryStage.show();
 		
