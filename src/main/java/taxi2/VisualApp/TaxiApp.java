@@ -28,7 +28,7 @@ public class TaxiApp extends Application{
 		primaryStage.centerOnScreen();
 		primaryStage.setTitle("Codeme Taxi");
 		GridPane root = new GridPane();
-		Label title = new Label("Dostï¿½pni kierowcy");
+		Label title = new Label("Available drivers");
 		root.add(title, 0, 0);
 		
 		ListView<TaxiDriver> list = new ListView<>(c.getData());
@@ -40,20 +40,12 @@ public class TaxiApp extends Application{
 		
 		primaryStage.show();
 		
-<<<<<<< HEAD
-		Button save = new Button("Zamów");
-		root.add(save, 5, 4);
-		
-		Button delete = new Button("Usuñ");
-		root.add(delete, 5, 5);
-=======
-		Button save = new Button("Zamï¿½w");
+		Button save = new Button("order");
 		root.add(save, 5, 3);
 		
-		Button delete = new Button("Usuï¿½");
+		Button delete = new Button("delete");
 		root.add(delete, 5, 4);
->>>>>>> d352d34c12ef11866491ba5cdb609355c177b6fe
-		
+
 		save.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			
 			
