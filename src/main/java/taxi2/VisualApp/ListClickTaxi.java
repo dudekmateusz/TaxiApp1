@@ -1,5 +1,8 @@
 package taxi2.VisualApp;
 
+import java.time.LocalDate;
+import java.util.Calendar;
+
 import Drivers.TaxiDriver;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -27,8 +30,31 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
                 final TaxiDriver driver = list.getSelectionModel().getSelectedItem();
 
                 root.add(new Label("Fill in date"), 0, 0);
+                
+                Calendar calendar = Calendar.getInstance();
 
-                DatePicker d = new DatePicker();
+                DatePicker d;
+                
+                if(driver.getDriverDate() != null) {
+                	calendar.setTime(driver.getDriverDate());
+                	d = new DatePicker(LocalDate.of(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)));
+                	} else {
+                	d = new DatePicker();
+                	}
+                
+                
+//                reservation.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//
+//                    public void handle(MouseEvent event) {
+//                        taxi.setCar(car.getText());
+//                        Calendar c = Calendar.getInstance();
+//                        c.set(Calendar.YEAR, date.getValue().getYear());
+//                        c.set(Calendar.MONTH, date.getValue().getMonth().getValue());
+//                        c.set(Calendar.DAY_OF_MONTH, date.getValue().getDayOfMonth());
+//                        taxi.setDate(c.getTime());
+//
+//                    }
+                
                 
                 root.add(d, 0, 1);
 
