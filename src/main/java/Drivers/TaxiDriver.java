@@ -1,5 +1,7 @@
 package Drivers;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,16 +20,16 @@ public class TaxiDriver {
 	    private String taxiDriver;
 	    
 	    @Column(name = "date")
-	    private String driverDate;
+	    private Date driverDate;
 
 	    @Column(name = "status")
 	    private boolean isAvailable;
 
-	    public String getDriverDate() {
+	    public Date getDriverDate() {
 			return driverDate;
 		}
 
-		public void setDriverDate(String driverDate) {
+		public void setDriverDate(Date driverDate) {
 			this.driverDate = driverDate;
 		}
 
