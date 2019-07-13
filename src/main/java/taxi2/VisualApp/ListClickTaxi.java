@@ -4,6 +4,7 @@ import Drivers.TaxiDriver;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -27,9 +28,9 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
 
                 root.add(new Label("Fill in date"), 0, 0);
 
-                final TextField date = new TextField(driver.getDriverDate());
+                DatePicker d = new DatePicker();
                 
-                root.add(date, 0, 1);
+                root.add(d, 0, 1);
 
                 Button order = new Button("order");
                 root.add(order, 0, 2);
