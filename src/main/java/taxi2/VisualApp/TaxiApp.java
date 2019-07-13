@@ -1,24 +1,17 @@
 package taxi2.VisualApp;
 
-import java.awt.Font;
-
 import Drivers.TaxiDriver;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import taxi2.VisualApp.dbEngine.JPAControl;
 
 
 public class TaxiApp extends Application{
-
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -30,6 +23,7 @@ public class TaxiApp extends Application{
 		primaryStage.centerOnScreen();
 		primaryStage.setTitle("Codeme Taxi");
 		GridPane root = new GridPane();
+		root.setStyle("-fx-background-color: #87CEFA;");
 		Label title = new Label("Available drivers");
 		
 		root.add(title, 0, 0);
