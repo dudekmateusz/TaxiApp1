@@ -25,8 +25,8 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
                 ListView<User> list = (ListView<User>)event.getSource();
                 final User user = list.getSelectionModel().getSelectedItem();
 
-                root.add(new Label("Nazwa"), 0, 0);
-                root.add(new Label("Wiek"), 1, 0);
+                root.add(new Label("Data"), 0, 0);
+//                root.add(new Label("Wiek"), 1, 0);
                 final TextField name = new TextField(user.getUserName());
                 final TextField age = new TextField(String.valueOf(user.getUserAge()));
                 root.add(name, 0, 1);

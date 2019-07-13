@@ -2,9 +2,14 @@ package taxi2.VisualApp;
 
 import Drivers.TaxiDriver;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import taxi2.VisualApp.dbEngine.JPAControl;
@@ -29,10 +34,26 @@ public class TaxiApp extends Application{
 		ListView<TaxiDriver> list = new ListView<>(c.getData());
 		root.add(list, 0, 1);
 		
-		Scene scene = new Scene(root,1000,600);
+		Scene scene = new Scene(root, 600, 600);
 		primaryStage.setScene(scene);
+		
 		primaryStage.show();
 		
+		Button save = new Button("Zam�w");
+		root.add(save, 5, 3);
+		
+		Button delete = new Button("Usu�");
+		root.add(delete, 5, 4);
+		
+		save.setOnMouseClicked(new EventHandler<MouseEvent>(){
+			
+			
+			public void handle(MouseEvent event) {
+				
+			}
+		});
+
+			
 	}
 
 }
