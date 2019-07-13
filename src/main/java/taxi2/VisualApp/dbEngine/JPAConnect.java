@@ -28,10 +28,11 @@ public class JPAConnect {
 	public void addToDatabase(TaxiDriver user) {
 		em.getTransaction().begin();
 		try {
-			em.persist(user);
+			em.merge(user);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			em.getTransaction().rollback();
+			e.printStackTrace();
 		}
 	}
 }

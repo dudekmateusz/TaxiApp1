@@ -62,6 +62,7 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
                 	c.set(Calendar.YEAR, d.getValue().getYear());
                 	c.set(Calendar.MONTH, d.getValue().getMonth().getValue());
                 	c.set(Calendar.DAY_OF_MONTH, d.getValue().getDayOfMonth());
+                	System.out.println(driver.getId());
                     driver.setDriverDate(c.getTime());
                     driver.setDriverStatus(true);
                     list.refresh();
