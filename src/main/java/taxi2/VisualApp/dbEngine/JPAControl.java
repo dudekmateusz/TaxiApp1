@@ -8,12 +8,13 @@ public class JPAControl {
 
 		JPAConnect jpa = new JPAConnect();
 		
-		private ObservableList<TaxiDriver> getData(){
-			return FXCollections.observableArrayList();
+		public ObservableList<TaxiDriver> getData(){
+			return FXCollections.observableArrayList(jpa.getList());
 			}
 		
-		private (Date)
 
-	}
+		public void update (TaxiDriver user) {
+			jpa.addToDatabase(user);
+		}
 
 }
