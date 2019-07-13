@@ -41,13 +41,14 @@ public class TaxiApp extends Application{
 		primaryStage.show();
 		
 		Button save = new Button("Zamów");
-		root.add(save, 0, 0);
+		root.add(save, 2, 3);
 		
 		Button delete = new Button("Usuñ");
-		root.add(delete, 1, 0);
+		root.add(delete, 2, 4);
 		
 		save.setOnMouseClicked(new EventHandler<MouseEvent>(){
-
+			
+			
 			public void handle(MouseEvent event) {
 				
 			}
