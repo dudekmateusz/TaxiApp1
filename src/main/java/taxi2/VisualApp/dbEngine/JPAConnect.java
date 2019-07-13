@@ -14,17 +14,17 @@ public class JPAConnect {
 
 //Konstruktor
 	public JPAConnect() {
-		this.em = Persistence.createEntityManagerFactory("codeme_taxi2").createEntityManager();
+		this.em = Persistence.createEntityManagerFactory("codeme_taxi2-ds").createEntityManager();
 	}
 
-//Pobieranie z bazy danych listy taksówek
+//Pobieranie z bazy danych listy taksï¿½wek
 	public List<TaxiDriver> getList() {
 		TypedQuery<TaxiDriver> q = em.createQuery("SELECT u FROM TaxiDriver u", TaxiDriver.class);
 		List<TaxiDriver> res = q.getResultList();
 		return res;
 	}
 
-//Aktualizowanie w bazie danych statusu taksówki
+//Aktualizowanie w bazie danych statusu taksï¿½wki
 	public void addToDatabase(TaxiDriver user) {
 		em.getTransaction().begin();
 		try {
