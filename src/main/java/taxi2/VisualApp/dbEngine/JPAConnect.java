@@ -10,27 +10,29 @@ import Drivers.TaxiDriver;
 
 public class JPAConnect {
 
-	public static void main(String[] args) {
-		EntityManager em = Persistence.createEntityManagerFactory("codeme_taxi2").createEntityManager();
-		TaxiDriver user = new TaxiDriver();
-		
+	private EntityManager em;
+
+//Konstruktor
+	public JPAConnect() {
+		this.em = Persistence.createEntityManagerFactory("codeme_taxi2").createEntityManager();
+	}
+
+//Pobieranie z bazy danych listy taksówek
+	public List<TaxiDriver> getList() {
+		TypedQuery<TaxiDriver> q = em.createQuery("SELECT u FROM TaxiDriver u", TaxiDriver.class);
+		List<TaxiDriver> res = q.getResultList();
+		return res;
+	}
+
+//Aktualizowanie w bazie danych statusu taksówki
+	public void addToDatabase(TaxiDriver user) {
 		em.getTransaction().begin();
 		try {
 			em.persist(user);
 			em.getTransaction().commit();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			em.getTransaction().rollback();
 		}
 	}
-		
-		public List<TaxiDriver> getList(EntityManager em) {
-			TypedQuery<TaxiDriver> q = em.createQuery("SELECT u FROM TaxiDriver u", TaxiDriver.class);
-			List<TaxiDriver> res =  q.getResultList();
-			return res;
-		}
-		
-		
-
-	}
-
+}
 

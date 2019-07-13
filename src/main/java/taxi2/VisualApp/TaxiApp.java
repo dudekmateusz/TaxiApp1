@@ -1,7 +1,5 @@
 package taxi2.VisualApp;
 
-
-import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
@@ -16,14 +14,8 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 
-
 public class TaxiApp extends Application{
-	EntityManager em = Persistence.createEntityManagerFactory("codeme_taxi2").createEntityManager();
 
-	private ObservableList<TaxiDriver> getData(){
-	TypedQuery<TaxiDriver> q = em.createQuery("SELECT p FROM taxiDriver p", TaxiDriver.class);
-	return FXCollections.observableArrayList(q.getResultList());
-	}
 	
 	public static void main(String[] args) {
 		launch(args);
