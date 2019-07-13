@@ -12,7 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import pl.codeme.javase14.basics.db.User;
 
-public class ListClick implements EventHandler<MouseEvent> {
+public class ListClickTaxi implements EventHandler<MouseEvent> {
 
     @Override
     public void handle(MouseEvent event) {
