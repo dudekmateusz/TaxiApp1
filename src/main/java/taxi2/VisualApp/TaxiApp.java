@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import Drivers.taxiDriver;
+import Drivers.TaxiDriver;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,8 +20,8 @@ import javafx.stage.Stage;
 public class TaxiApp extends Application{
 	EntityManager em = Persistence.createEntityManagerFactory("codeme_taxi2").createEntityManager();
 
-	private ObservableList<taxiDriver> getData(){
-	TypedQuery<taxiDriver> q = em.createQuery("SELECT p FROM taxiDriver p", taxiDriver.class);
+	private ObservableList<TaxiDriver> getData(){
+	TypedQuery<TaxiDriver> q = em.createQuery("SELECT p FROM taxiDriver p", TaxiDriver.class);
 	return FXCollections.observableArrayList(q.getResultList());
 	}
 	
@@ -37,7 +37,7 @@ public class TaxiApp extends Application{
 		Label title = new Label("Dostêpni kierowcy");
 		root.add(title, 0, 0);
 		
-		ListView<taxiDriver> list = new ListView<taxiDriver>(getData());
+		ListView<TaxiDriver> list = new ListView<TaxiDriver>(getData());
 		root.add(list, 0, 1);
 		
 		Scene scene = new Scene(root,1000,600);
