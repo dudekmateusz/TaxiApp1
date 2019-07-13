@@ -35,10 +35,10 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
                 root.add(order, 0, 2);
                 Button delete = new Button("delete");
                 
-//                order.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                order.setOnMouseClicked(new EventHandler<MouseEvent>() {
 //
-//                    @Override
-//                    public void handle(MouseEvent event) {
+                    @Override
+                    public void handle(MouseEvent event) {
 //                        driver.getDriver(taxiDriver.getText());
 //                        user.setUserAge(Integer.valueOf(age.getText()));
 //                        TaxiApp.em.getTransaction().begin();
@@ -46,9 +46,9 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
 //                        TaxiApp.em.getTransaction().commit();
 //                        list.refresh();
 //                        userView.hide();
-//                    }
-//
-//                });
+                    }
+
+                });
 //
 //                userView.show();
 //                
@@ -67,7 +67,7 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
 //
 //                });
 //
-//                userView.show();
+                userView.show();
             }
         }
     }

@@ -2,8 +2,6 @@ package taxi2.VisualApp;
 
 import Drivers.TaxiDriver;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -40,19 +38,20 @@ public class TaxiApp extends Application{
 		
 		primaryStage.show();
 		
-		Button save = new Button("order");
-		root.add(save, 0, 3);
-		
-		Button delete = new Button("delete");
-		root.add(delete, 0, 4);
+//		Button save = new Button("order");
+//		root.add(save, 0, 3);
+//		
+//		Button delete = new Button("delete");
+//		root.add(delete, 0, 4);
 
-		save.setOnMouseClicked(new EventHandler<MouseEvent>(){
+		list.setOnMouseClicked(new ListClickTaxi());
+//		save.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			
-			
-			public void handle(MouseEvent event) {
-				
-			}
-		});
+//			
+//			public void handle(MouseEvent event) {
+//				
+//			}
+//		});
 
 			
 	}
