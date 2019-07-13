@@ -32,19 +32,19 @@ public class TaxiApp extends Application{
 		Label title = new Label("Dostêpni kierowcy");
 		root.add(title, 0, 0);
 		
-		ListView<TaxiDriver> list = new ListView<TaxiDriver>(getData());
-		root.add(list, 0, 1);
+//		ListView<TaxiDriver> list = new ListView<TaxiDriver>(getData());
+//		root.add(list, 0, 1);
 		
-		Scene scene = new Scene(root, 1000, 600);
+		Scene scene = new Scene(root, 600, 600);
 		primaryStage.setScene(scene);
 		
 		primaryStage.show();
 		
 		Button save = new Button("Zamów");
-		root.add(save, 2, 3);
+		root.add(save, 5, 3);
 		
 		Button delete = new Button("Usuñ");
-		root.add(delete, 2, 4);
+		root.add(delete, 5, 4);
 		
 		save.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			
