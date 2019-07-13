@@ -25,6 +25,7 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
                 Stage userView = new Stage();
                 GridPane root = new GridPane();
                 userView.setScene(new Scene(root, 300, 200));
+                root.setStyle("-fx-background-color: #90EE90;");
 
                 ListView<TaxiDriver> list = (ListView<TaxiDriver>)event.getSource();
                 final TaxiDriver driver = list.getSelectionModel().getSelectedItem();

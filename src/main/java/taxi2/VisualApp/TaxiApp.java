@@ -24,17 +24,18 @@ public class TaxiApp extends Application{
 		primaryStage.setTitle("Codeme Taxi");
 		GridPane root = new GridPane();
 		root.setStyle("-fx-background-color: #87CEFA;");
+		
 		Label title = new Label("Available drivers");
+		
 		
 		root.add(title, 0, 0);
 		
 		ListView<TaxiDriver> list = new ListView<>(c.getData());
 		root.add(list, 0, 1);
 		
-		Scene scene = new Scene(root, 600, 600, Color.BLACK);
+		Scene scene = new Scene(root, 600, 600);
 		
 		primaryStage.setScene(scene);
-		scene.setFill(Color.AZURE);
 		
 		primaryStage.show();
 		
