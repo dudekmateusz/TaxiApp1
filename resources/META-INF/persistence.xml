@@ -11,13 +11,8 @@
 
     <properties>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-<<<<<<< HEAD
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/codeme_taxi22?useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
-      <property name="javax.persistence.jdbc.user" value="root" />
-=======
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://devht.pl/codeme_taxi2?useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC" />
       <property name="javax.persistence.jdbc.user" value="codeme" />
->>>>>>> 608d845a246f3473587254e05a053d4ed03f3b44
       <property name="javax.persistence.jdbc.password" value="codeme123" />
       <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect" />
       <property name="hibernate.connection.characterEncoding" value="utf8" />
