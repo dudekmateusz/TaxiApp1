@@ -6,16 +6,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import org.hibernate.procedure.internal.Util.ResultClassesResolutionContext;
+import Drivers.TaxiDriver;
 
 public class JPAConnect {
 
 	public static void main(String[] args) {
 		EntityManager em = Persistence.createEntityManagerFactory("codeme_taxi2").createEntityManager();
-		User user = new User();
-		user.setUserName("Ela");
-		user.setUserAge(36);
-		
+		TaxiDriver user = new TaxiDriver();
 		
 		em.getTransaction().begin();
 		try {
@@ -24,13 +21,16 @@ public class JPAConnect {
 		} catch(Exception e) {
 			em.getTransaction().rollback();
 		}
+	}
 		
-		TypedQuery<User> q = em.createQuery("SELECT u FROM User u", User.class);
-		List<User> res =  q.getResultList();
-		for(User item : res) {
-			System.out.println(item);
+		public List<TaxiDriver> getList(EntityManager em) {
+			TypedQuery<TaxiDriver> q = em.createQuery("SELECT u FROM TaxiDriver u", TaxiDriver.class);
+			List<TaxiDriver> res =  q.getResultList();
+			return res;
 		}
+		
+		
 
 	}
 
-}
+
