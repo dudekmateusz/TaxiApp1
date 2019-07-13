@@ -47,8 +47,8 @@ public class TaxiDriver {
 			return taxiDriver;
 		}
 
-//		@Override
-//	    public String toString() {
-//	        return id + "|" + userName + "|" + userAge;
-//	    }
+		@Override
+	    public String toString() {
+	        return id + " | " + taxiDriver + " | " + isAvailable+" | "+driverDate;
+	    }
 }
