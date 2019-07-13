@@ -37,14 +37,15 @@ public class TaxiApp extends Application{
 		
 		Scene scene = new Scene(root, 600, 600);
 		primaryStage.setScene(scene);
+		scene.getFill();
 		
 		primaryStage.show();
 		
 		Button save = new Button("Zamów");
-		root.add(save, 5, 3);
+		root.add(save, 5, 4);
 		
 		Button delete = new Button("Usuñ");
-		root.add(delete, 5, 4);
+		root.add(delete, 5, 5);
 		
 		save.setOnMouseClicked(new EventHandler<MouseEvent>(){
 			
