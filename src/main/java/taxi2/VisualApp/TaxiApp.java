@@ -3,7 +3,7 @@ package taxi2.VisualApp;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import Drivers.taxiDriver;
+import Drivers.TaxiDriver;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,9 +14,9 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 
-
 public class TaxiApp extends Application{
 
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
