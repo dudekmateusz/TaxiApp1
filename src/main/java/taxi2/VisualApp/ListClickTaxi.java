@@ -10,14 +10,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import taxi2.VisualApp.dbEngine.JPAControl;
 
 public class ListClickTaxi implements EventHandler<MouseEvent> {
-
+		JPAControl jpa = new JPAControl();
     @Override
     public void handle(MouseEvent event) {
         if(event.getButton() == MouseButton.PRIMARY) {
@@ -43,17 +43,7 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
                 	}
                 
                 
-//                reservation.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//
-//                    public void handle(MouseEvent event) {
-//                        taxi.setCar(car.getText());
-//                        Calendar c = Calendar.getInstance();
-//                        c.set(Calendar.YEAR, date.getValue().getYear());
-//                        c.set(Calendar.MONTH, date.getValue().getMonth().getValue());
-//                        c.set(Calendar.DAY_OF_MONTH, date.getValue().getDayOfMonth());
-//                        taxi.setDate(c.getTime());
-//
-//                    }
+
                 
                 
                 root.add(d, 0, 1);
@@ -66,6 +56,19 @@ public class ListClickTaxi implements EventHandler<MouseEvent> {
 //
                     @Override
                     public void handle(MouseEvent event) {
+                    
+                	Calendar c = Calendar.getInstance();
+                	c.set(Calendar.YEAR, d.getValue().getYear());
+                	c.set(Calendar.MONTH, d.getValue().getMonth().getValue());
+                	c.set(Calendar.DAY_OF_MONTH, d.getValue().getDayOfMonth());
+                    driver.setDriverDate(c.getTime());
+                    driver.setDriverStatus(true);
+                    list.refresh();
+                    userView.hide();
+                    jpa.update(driver);
+                    
+
+                    	
 //                        driver.getDriver(taxiDriver.getText());
 //                        user.setUserAge(Integer.valueOf(age.getText()));
 //                        TaxiApp.em.getTransaction().begin();
